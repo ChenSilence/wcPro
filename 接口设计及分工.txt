@@ -1,0 +1,20 @@
+罗子璇16998：输入控制。Begin类。
+	接受并处理控制台参数，
+	调用CountNumber类的count(String sPath)方法，传入合理的源文件路径
+
+陈曦17001：核心处理part1--词频统计。CountNumber类
+	Map<String,Integer> map = new TreeMap<String,Integer>();
+      key值为单词，value为单词数。
+      将计数后的map表传给WordSort类的sort（TreeMap map）函数
+
+张一帆16637：核心处理part2--排序。WordSort类
+	对接收到的map按 value值进行降序排列。
+	调用PrintResult类的print(Treemap map)方法,传入排序后的map
+
+胡文轩16997：输出控制。PrintResult类。
+	执行print(Treemap map)方法，
+	将排序后的结果按照规定格式输入到默认的result.txt文件中（相对路径，在程序运行目录下）。
+	
+
+	
+      
