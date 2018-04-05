@@ -1,0 +1,2 @@
+shuzu: 2
+zifu: 1
