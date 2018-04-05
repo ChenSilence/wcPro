@@ -11,6 +11,7 @@ import java.util.TreeMap;
 public class CountNumber {
 	private  Map<String,Integer> map = new TreeMap<String,Integer>();
 	private  String text;
+	private  StringBuilder out = new  StringBuilder();
 	private  List<String> lists = new ArrayList<String>();  //存储过滤后单词的列表   
 	
 	
@@ -19,11 +20,14 @@ public class CountNumber {
 	}
 	
 	
-	public void count(String sPath) {
+	public StringBuilder count(String sPath) {
 		text = readFile(sPath);
 		divide(text);
 		doCount();
-		show();
+//		new WordSort.sort(map);
+		resultToString();
+//		show();
+		return out;
 	}
 	
 	
@@ -49,7 +53,7 @@ public class CountNumber {
 						word = word.substring(0, word.length()-1 );
 					}
 					
-					lists.add(word);//添加进lists
+					lists.add(word.toLowerCase());//添加进lists同时转小写字母
 					
 				}
 			}
@@ -57,39 +61,25 @@ public class CountNumber {
 	
 	public void doCount() { //单词的词频统计    
 	       for (String nowWord : lists) {    
-	           if(map.get(nowWord) != null){    
+	           if(map.get(nowWord) != null){	//单词已存在则value+1
 	               map.put(nowWord,map.get(nowWord) + 1);    
 	           }else{    
-	               map.put(nowWord,1);    
+	               map.put(nowWord,1);//单词不存在则添加    
 	           }    
 	   
 	       }
 	}
 	
-
+	public void resultToString() {//将map中的结果存到字符串out中
+		for (Map.Entry<String, Integer> entry : map.entrySet()) { 
+			out = out.append(entry.getKey()).append(": ").append(entry.getValue()).append("\r\n");
+		}
+		if( out.length() > 0)
+		out.delete(out.length()-2, out.length());
+	}
 	
 	public void show() {
-        for(Map.Entry<String, Integer> entry : map.entrySet() ){    
-            System.out.println(entry.getKey()+ ": " +entry.getValue());    
-        }       
+        System.out.println(out);           
 	}
 	
-//	for (Map.Entry<Integer, Integer> entry : map.entrySet()) { 
-//		  System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue()); 
-//		}
-//	
-	
-	/**
-	 * @return text
-	 */
-	public String getText() {
-		return text;
-	}
-	/**
-	 * @param text 要设置的 text
-	 */
-	public void setText(String text) {
-		this.text = text;
-	}
-
 }
