@@ -14,15 +14,16 @@ public class CountNumber {
 	private String text;
 	private StringBuilder out = new StringBuilder();
 	private List<String> lists = new ArrayList<String>(); // 存储过滤后单词的列表
+	
 
 	public StringBuilder count(String sPath) throws FileNotFoundException {
 		text = readFile(sPath);
 		divide(text);
 		doCount();
-		resultToString();
-		// show();
 		WordSort.sort(map);
-		// map = WordSort.sort(map);
+//		resultToString();
+//		show();
+// 		map = WordSort.sort(map);
 
 		return out;
 	}
@@ -40,17 +41,41 @@ public class CountNumber {
 	public void divide(String text) {// 将文本分割成多个单词
 		String[] words = text.split("[^a-zA-Z-]");// 保留下只含字母和-的连续字符
 		for (String word : words) {
+			
+//			if (word.length() != 0) {// 去除空串，可能由多个非字母造成
+//
+//				if (word.charAt(0) == '-') {// 单词如-abcd,去掉前面的-
+//					word = word.substring(1);
+//				}
+//				if(word.length()>0) {
+//					if (word.charAt(word.length() - 1) == '-') {// 单词如abcd-,去掉最后的-
+//					word = word.substring(0, word.length() - 1);
+//					}
+//				}
+//			if(word.length() >0 ) {
+//				lists.add(word.toLowerCase());// 添加进lists同时转小写字母
+//		}
 			if (word.length() != 0) {// 去除空串，可能由多个非字母造成
-
-				if (word.charAt(0) == '-') {// 单词如-abcd,去掉前面的-
-					word = word.substring(1);
+				int left=0,right=word.length();
+				int i=0,j=word.length()-1;
+				while(word.charAt(i) == '-') {//left第一个非短横线的字母下标
+					left++;
+					if(i == word.length()-1) {
+						break;
+					}
+					i++;
 				}
-				if (word.charAt(word.length() - 1) == '-') {// 单词如abcd-,去掉最后的-
-					word = word.substring(0, word.length() - 1);
+				while(word.charAt(j) == '-') {//right从后往前第一个非段横线的字母下标
+					right--;
+					if(j == 0) {
+						break;
+					}
+					j--;
 				}
-
-				lists.add(word.toLowerCase());// 添加进lists同时转小写字母
-
+				if (left <= right) {
+					word = word.substring(left, right);//截取前后短横线包围的部分
+					lists.add(word.toLowerCase());// 添加进lists同时转小写字母
+				}
 			}
 		}
 	}
@@ -77,5 +102,6 @@ public class CountNumber {
 	public void show() {
 		System.out.println(out);
 	}
+
 
 }
