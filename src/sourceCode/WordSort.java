@@ -6,16 +6,16 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class WordSort {
-	
+
 	public static TreeMap<String, Integer> sort(Map<String, Integer> map) throws FileNotFoundException {
 		ValueComparator bvc = new ValueComparator(map);
 		TreeMap<String, Integer> sortedMap = new TreeMap<String, Integer>(bvc);
 		sortedMap.putAll(map);
 		PrintResult.print(sortedMap);
-		
+
 		return sortedMap;
 	}
-	
+
 }
 
 class ValueComparator implements Comparator<String> {
