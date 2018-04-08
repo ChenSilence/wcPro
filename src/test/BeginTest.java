@@ -21,7 +21,7 @@ public class BeginTest {
 		System.out.printf("开始测试1\n");
 		Begin test=new Begin();
 		String args[]={"text.txt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("everything is right!",ss[0]);
 	}
@@ -31,7 +31,7 @@ public class BeginTest {
 		System.out.printf("开始测试2\n");
 		Begin test=new Begin();
 		String args[]={"text.tt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -41,7 +41,7 @@ public class BeginTest {
 		System.out.printf("开始测试3\n");
 		Begin test=new Begin();
 		String args[]={"texttxt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("请输入正确文件名!",ss[0]);
 	}
@@ -51,7 +51,7 @@ public class BeginTest {
 		System.out.printf("开始测试4\n");
 		Begin test=new Begin();
 		String args[]={"text.cpp"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}	
@@ -61,7 +61,7 @@ public class BeginTest {
 		System.out.printf("开始测试5\n");
 		Begin test=new Begin();
 		String args[]={"test.txt","text2.txt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("请输入正确文件名",ss[0]);
 	}
@@ -71,7 +71,7 @@ public class BeginTest {
 		System.out.printf("开始测试6\n");
 		Begin test=new Begin();
 		String args[]={};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("请输入参数",ss[0]);
 	}
@@ -81,7 +81,7 @@ public class BeginTest {
 		System.out.printf("开始测试7\n");
 		Begin test=new Begin();
 		String args[]={"abc.c.txt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -91,7 +91,7 @@ public class BeginTest {
 		System.out.printf("开始测试8\n");
 		Begin test=new Begin();
 		String args[]={"asdhaiudhiwahidwahiawuhdawiuhdw.txt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("everything is right!",ss[0]);
 	}
@@ -101,7 +101,7 @@ public class BeginTest {
 		System.out.printf("开始测试9\n");
 		Begin test=new Begin();
 		String args[]={"text.doc"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -110,7 +110,7 @@ public class BeginTest {
 		System.out.printf("开始测试10\n");
 		Begin test=new Begin();
 		String args[]={"txt.txt"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("everything is right!",ss[0]);
 	}
@@ -120,7 +120,7 @@ public class BeginTest {
 		System.out.printf("开始测试11\n");
 		Begin test=new Begin();
 		String args[]={"....c"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -130,7 +130,7 @@ public class BeginTest {
 		System.out.printf("开始测试12\n");
 		Begin test=new Begin();
 		String args[]={" "};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("请输入正确文件名!",ss[0]);
 	}
@@ -140,7 +140,7 @@ public class BeginTest {
 		System.out.printf("开始测试13\n");
 		Begin test=new Begin();
 		String args[]={"text.java"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -150,7 +150,7 @@ public class BeginTest {
 		System.out.printf("开始测试14\n");
 		Begin test=new Begin();
 		String args[]={"text.sql"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -160,7 +160,7 @@ public class BeginTest {
 		System.out.printf("开始测试13\n");
 		Begin test=new Begin();
 		String args[]={"text.word"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -170,7 +170,7 @@ public class BeginTest {
 		System.out.printf("开始测试16\n");
 		Begin test=new Begin();
 		String args[]={"text.png"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -180,7 +180,7 @@ public class BeginTest {
 		System.out.printf("开始测试17\n");
 		Begin test=new Begin();
 		String args[]={"text.py"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -190,7 +190,7 @@ public class BeginTest {
 		System.out.printf("开始测试18\n");
 		Begin test=new Begin();
 		String args[]={"text.jpg"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -199,7 +199,7 @@ public class BeginTest {
 		System.out.printf("开始测试19\n");
 		Begin test=new Begin();
 		String args[]={"text.gif"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
@@ -209,7 +209,7 @@ public class BeginTest {
 		System.out.printf("开始测试20\n");
 		Begin test=new Begin();
 		String args[]={"text.exe"};
-		test.read(args);
+		test.main(args);
         String[] ss=test.getOutput();
 		assertEquals("文件格式不对，请重新输入!",ss[0]);
 	}
